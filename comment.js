@@ -81,5 +81,13 @@ console.log(`My name is ${myName}. I am ${myAge} years old in human years which 
 
 const width = 6;
 const height = 8;
-const area = width * height;
-console.log(area);
+const area = areaRectangle(width, height);
+const areaRect = function(width, height) {
+    return width * height;
+}
+console.log(`Function areaRectangle: ${area}`);
+console.log(`Function anonymous areaRect: ${areaRect(width, height)}`);
+
+function areaRectangle(width, height) {
+    return width * height;
+}
