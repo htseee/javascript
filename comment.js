@@ -85,8 +85,11 @@ const area = areaRectangle(width, height);
 const areaRect = function(width, height) {
     return width * height;
 }
+const areaR = (width, height) => width * height;
+
 console.log(`Function areaRectangle: ${area}`);
 console.log(`Function anonymous areaRect: ${areaRect(width, height)}`);
+console.log(`Function arrow areaR: ${areaR(width, height)}`);
 
 function areaRectangle(width, height) {
     return width * height;
