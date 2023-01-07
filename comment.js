@@ -235,3 +235,45 @@ const sleepHours = (day) => {
   logEvent(name2, event2);
   logTime(name2, days2);
   
+  let grocery = ['fruits', 'pasta', 'vegetable', 'meat', 'fish', 'shellfish', 'drinking water', 'milk', 'juice', 'smoothies', 'soft drinks', 'oil', 'beans', 'seeds'];
+  let array = [];
+  array = grocery.slice(0, 3);
+  array = array.concat(grocery.slice(4, 6));
+  console.log(array);
+  array = grocery.filter(char => char[0] != 'f');
+  console.log(array);
+  array = grocery.filter(char => char[0] == 'f');
+  console.log(array);
+  console.log(grocery.find(char => char[0] != 'f'));
+  console.log(grocery.findIndex(element => element === 'meat'));
+  console.log(grocery.forEach(element => {
+    if (element[0] != 's') {
+        console.log(element);
+    }
+  }));
+  console.log(grocery.includes('seeds'));
+  console.log(grocery.indexOf('seeds'));
+  console.log(Array.isArray(grocery));
+  console.log(grocery.join());
+  console.log(grocery.lastIndexOf('seeds'));
+  console.log(grocery.length);
+  array = grocery.map(element => element + '!!!');
+  console.log(array);
+  let f = grocery.pop();
+  console.log(f);
+  console.log(grocery);
+  grocery.push(f);
+  console.log(grocery);
+  console.log(grocery.reduce((acc, curr) => acc + curr));
+  console.log(grocery.reverse());
+  f = grocery.shift();
+  console.log(f);
+  console.log(grocery);
+  grocery.unshift(f);
+  console.log(grocery);
+  console.log(grocery.sort());
+  grocery.splice(2, 0, '1', '2');
+  console.log(grocery);
+  console.log(grocery.toString());
+  array = grocery.valueOf();
+  console.log(array);
