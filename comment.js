@@ -94,3 +94,51 @@ console.log(`Function arrow areaR: ${areaR(width, height)}`);
 function areaRectangle(width, height) {
     return width * height;
 }
+
+console.log('hi');
+
+const userChoice = userInput => {
+  userInput = userInput.toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissor') {
+    return userInput;
+  } else {
+    console.log('error');
+  }
+}
+const computerChoice = () => {
+  let number = Math.floor(Math.random() * 3);
+  if (number === 0) {
+    return 'rock';
+  } else if (number === 1) {
+    return 'paper';
+  } else {
+    return 'scissor';
+  }
+}
+const determineWinner = (user, computer) => {
+  if (user === computer) {
+    return 'The game is a tie!';
+  } else if (user === 'rock') {
+    if (computer === 'paper') {
+      return 'computer won';
+    } else {
+      return 'user won';
+    }
+  } else if (user === 'scissor') {
+    if (computer === 'paper') {
+      return 'user won';
+    } else {
+      return 'computer won';
+    }
+  } else if (user === 'paper') {
+    if (computer === 'rock') {
+      return 'user won';
+    } else {
+      return 'computer won';
+    }
+  }
+}
+let user = userChoice('paper');
+let computer = computerChoice();
+console.log(`User: ${user}, computer: ${computer}`);
+console.log(determineWinner(user, computer));
