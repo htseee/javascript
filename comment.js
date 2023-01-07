@@ -277,3 +277,19 @@ const sleepHours = (day) => {
   console.log(grocery.toString());
   array = grocery.valueOf();
   console.log(array);
+
+let input = 'this is the game';
+const vowel = ['a', 'e', 'i', 'o', 'u'];
+let resultArray = [];
+for (let i = 0; i < input.length; i++) {
+  for (let j = 0; j < vowel.length; j++) {
+    if (input[i] === vowel[j]) {
+      resultArray.push(input[i]);
+    }
+    //console.log(j);
+  }
+  //console.log(i) ;
+}
+let resultString = resultArray.join();
+resultString = resultString.toUpperCase();
+console.log(resultString);
