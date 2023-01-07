@@ -142,3 +142,48 @@ let user = userChoice('paper');
 let computer = computerChoice();
 console.log(`User: ${user}, computer: ${computer}`);
 console.log(determineWinner(user, computer));
+
+const sleepHours = (day) => {
+    if (day === 'monday') {
+      return 8;
+    } else if (day === 'tuesday') {
+      return 8;
+    } else if (day === 'wednesday') {
+      return 8;
+    } else if (day === 'thursday') {
+      return 8;
+    } else if (day === 'friday') {
+      return 8;
+    } else if (day === 'saturday') {
+      return 8;
+    } else if (day === 'sunday') {
+      return 8;
+    }
+  }
+  const actualSleepHours = () => 8 + 8 + 8 + 8 + 8 + 8 + 8;
+  /*
+    let sleep = sleepHours('monday') + sleepHours('tuesday') + sleepHours('wednesday') + sleepHours('thursday') + sleepHours('friday') + sleepHours('saturday') + sleepHours('sunday');
+    return sleep;
+  }
+  */
+  const idealSleepHours = (idealHours) => idealHours * 7;
+  /*
+    let idealHours = 7;
+    return idealHours * 7;
+  }
+  */
+  const calculateSleepDebt = () => {
+    let actualSleep = actualSleepHours();
+    let idealSleep = idealSleepHours(7);
+    let actual = actualSleep - idealSleep;
+    if (actualSleep === idealSleep) {
+      console.log('user got perfect amount of sleep');
+    } else if (actualSleep > idealSleep) {
+      console.log(`user got more sleep than needed. ${actual} hours user sleep over.`);
+    } else if (actualSleep < idealSleep) {
+      console.log(`user should get some rest. ${actual} hours user sleep under.`);
+    }
+  }
+  console.log(actualSleepHours());
+  console.log(idealSleepHours(7));
+  calculateSleepDebt();
