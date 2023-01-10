@@ -312,3 +312,68 @@ const addTwo = num => {
   
   console.log(checkConsistentOutput(addTwo, 4));
 
+const robot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  _numOfSensors: 14,
+  _sentient: false,
+  _armor: 'Steel-plated',
+  provideInfo() {
+    return `I am ${this._model} and my current energy level is ${this._energyLevel}.`;
+  },
+  get energyLevel() {
+    if (typeof this._energyLevel === 'number') {
+      return `My current energy level is ${this._energyLevel}`;
+    } else {
+      return 'System malfunction: cannot retrieve energy level';
+    }
+  },
+  set numOfSensors(num) {
+    if (typeof num === 'number' && num >= 0) {
+      this._numOfSensors = num;
+    } else {
+      console.log('Pass in a number that is greater than or equal to 0');
+    }
+  },
+  get numOfSensors() {
+    if (typeof _numOfSensors === 'number') {
+      return this._numOfSensors;
+    } else {
+      console.log('Sensors are currently down.');
+    }
+  },
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+console.log(robot.provideInfo());
+console.log(robot.energyLevel);
+robot.numOfSensors = 100;
+console.log(robot.numOfSensors);
+const {functionality} = robot;
+functionality.beep();
+const robotKeys = Object.keys(robot);
+console.log(robotKeys);
+const robotEntries = Object.entries(robot);
+console.log(robotEntries);
+const newRobot = Object.assign({}, robot, {laserBlaster: true, voiceRecognition: true});
+console.log(newRobot);
+
+const robotFactory = (model, mobile) => {
+  return {
+    model,
+    mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+};
+const tinCan = robotFactory('P-500', true);
+tinCan.beep();
+console.log(`Robot model ${tinCan.model}`);
+console.log(`Robot mobile ${tinCan.mobile}`);
