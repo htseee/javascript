@@ -403,3 +403,39 @@ const menu = {
 menu.meal = ['Meat', 'Spaghetti', 'Fish', 'Rice'];
 menu.price = [13, 7, 10, 4];
 console.log(menu.todaysSpecial);
+
+const team = {
+  _players: [],
+  _games: [],
+  set players(playerObj) {
+    this._players.push(playerObj);
+  },
+  set games(gameObj) {
+    this._games.push(gameObj);
+  },
+  get players() {
+    return this._players;
+  },
+  get games() {
+    return this._games;
+  },
+  addPlayer(newFirstName, newLastName, newAge) {
+    let player = {firstName: newFirstName, lastName: newLastName, age: newAge};
+    this._players.push(player);
+  },
+  addGame(newOpponent, newTeamPoints, newOpponentPoints) {
+    let game = {opponent: newOpponent, teamPoints: newTeamPoints, opponentPoints: newOpponentPoints};
+    this._games.push(game);
+  }
+};
+team.players = {firstName: "Des", lastName: "Ced", age: 21};
+team.players = {firstName: "Daf", lastName: "Cyh", age: 25};
+team.players = {firstName: "Dyh", lastName: "Cas", age: 26};
+team.games = {opponent: "Sedf", teamPoints: 5, opponentPoints: 4};
+team.games = {opponent: "Saes", teamPoints: 3, opponentPoints: 6};
+team.games = {opponent: "Syfd", teamPoints: 4, opponentPoints: 2};
+team.addPlayer("Syr", "Dyr", 22);
+team.addGame("Sis", 5, 4);
+console.log(team);
+console.log(team.players);
+console.log(team.games);
