@@ -237,6 +237,8 @@ const sleepHours = (day) => {
   
   let grocery = ['fruits', 'pasta', 'vegetable', 'meat', 'fish', 'shellfish', 'drinking water', 'milk', 'juice', 'smoothies', 'soft drinks', 'oil', 'beans', 'seeds'];
   let array = [];
+  console.log(grocery.some(element => element === 'fruits'));
+  console.log(grocery.every(element => element === 'fruits'));
   array = grocery.slice(0, 3);
   array = array.concat(grocery.slice(4, 6));
   console.log(array);
@@ -309,3 +311,4 @@ const addTwo = num => {
   }
   
   console.log(checkConsistentOutput(addTwo, 4));
+
