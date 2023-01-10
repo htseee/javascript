@@ -377,3 +377,29 @@ const tinCan = robotFactory('P-500', true);
 tinCan.beep();
 console.log(`Robot model ${tinCan.model}`);
 console.log(`Robot mobile ${tinCan.mobile}`);
+
+const menu = {
+  _meal: [],
+  _price: [],
+  set meal(mealToCheck) {
+    if (typeof mealToCheck === 'object') {
+      this._meal = mealToCheck;
+    }  
+  },
+  set price(priceToCheck) {
+    if (typeof priceToCheck === 'object') {
+      this._price = priceToCheck;
+    }
+  },
+  get todaysSpecial() {
+    if (this._meal && this._price) {
+      let mealIndex = Math.floor(Math.random() * this._meal.length);
+      return `Today's Special is ${this._meal[mealIndex]} for ${this._price[mealIndex]}!`;
+    } else {
+      return 'Meal or price was not set correctly!';
+    }
+  }
+};
+menu.meal = ['Meat', 'Spaghetti', 'Fish', 'Rice'];
+menu.price = [13, 7, 10, 4];
+console.log(menu.todaysSpecial);
