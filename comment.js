@@ -590,3 +590,70 @@ const arrayCatalog = new Catalog();
 arrayCatalog.addMedia(historyOfEverything);
 arrayCatalog.addMedia(speed);
 arrayCatalog.addMedia(CDB);
+
+class School {
+  constructor(name, level, numberOfStudents) {
+    this._name = name;
+    this._level = level;
+    this._numberOfStudents = numberOfStudents;
+  }
+  get name() {
+    return this._name;
+  }
+  get level() {
+    return this._level;
+  }
+  get numberOfStudents() {
+    return this._numberOfStudents;
+  }
+  set numberOfStudents(value) {
+    if (typeof value === 'Number') {
+      this._numberOfStudents = value;  
+    } else {
+      console.log('Invalid input: numberOfStudents must be set to a Number.');
+    }
+  }
+  quickFacts() {
+    console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
+  }
+  static pickSubstituteTeacher(substituteTeachers) {
+    let random = Math.floor(Math.random() * substituteTeachers.length);
+    return substituteTeachers[random];
+  }
+}
+class Primary extends School {
+  constructor(name, level, numberOfStudents, pickupPolicy) {
+    super(name, level, numberOfStudents);
+    this._pickupPolicy = pickupPolicy;
+  }
+}
+class Middle extends School {
+  constructor(name, level, numberOfStudents) {
+    super(name, level, numberOfStudents);
+  }
+}
+class High extends School {
+  constructor(name, level, numberOfStudents, sportsTeams) {
+    super(name, level, numberOfStudents);
+    this._sportsTeams = sportsTeams;
+  }
+  get sportsTeams() {
+    return this._sportsTeams;
+  }
+}
+class SchoolCatalog {
+  constructor() {
+    this._array = [];
+  }
+  addSchool(value) {
+    this._array.push(value);
+  }
+}
+const lorraineHansbury = new Primary('Lorraine Hansbury', 'primary', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.');
+lorraineHansbury.quickFacts();
+console.log(School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']));
+const high = new High('Al E. Smith', 'high', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
+console.log(high.sportsTeams);
+const catalog = new SchoolCatalog();
+catalog.addSchool(lorraineHansbury);
+catalog.addSchool(high);
