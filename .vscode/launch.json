@@ -6,6 +6,15 @@
     "configurations": [
         {
             "name": "Launch Program",
+            "program": "${workspaceFolder}/birthday.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Launch Program",
             "program": "${workspaceFolder}/process.js",
             "request": "launch",
             "skipFiles": [
