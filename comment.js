@@ -237,8 +237,8 @@ const sleepHours = (day) => {
   
   let grocery = ['fruits', 'pasta', 'vegetable', 'meat', 'fish', 'shellfish', 'drinking water', 'milk', 'juice', 'smoothies', 'soft drinks', 'oil', 'beans', 'seeds'];
   let array = [];
-  console.log(grocery.some(element => element === 'fruits'));
-  console.log(grocery.every(element => element === 'fruits'));
+  console.log(`Some: ${grocery.some(element => element === 'fruits')}`);
+  console.log(`Every: ${grocery.every(element => element === 'fruits')}`);
   array = grocery.slice(0, 3);
   array = array.concat(grocery.slice(4, 6));
   console.log(array);
@@ -246,7 +246,7 @@ const sleepHours = (day) => {
   console.log(array);
   array = grocery.filter(char => char[0] == 'f');
   console.log(array);
-  console.log(grocery.find(char => char[0] != 'f'));
+  console.log(`Find: ${grocery.find(char => char[0] != 'f')}`);
   console.log(grocery.findIndex(element => element === 'meat'));
   console.log(grocery.forEach(element => {
     if (element[0] != 's') {
@@ -657,3 +657,22 @@ console.log(high.sportsTeams);
 const catalog = new SchoolCatalog();
 catalog.addSchool(lorraineHansbury);
 catalog.addSchool(high);
+
+function multiply(n1, n2) {
+  return n1 * n2;
+}
+console.log(multiply(3, 4));
+console.log(multiply.call(3, 4));
+
+const mockingbird = {
+  title: 'To Kill a Mockingbird',
+  describe: function() {
+    console.log(`${this.title} is a classic novel`);
+  }
+}
+mockingbird.describe();
+
+const pride = {
+  title: 'Pride and Prejudice'
+}
+mockingbird.describe.call(pride);
